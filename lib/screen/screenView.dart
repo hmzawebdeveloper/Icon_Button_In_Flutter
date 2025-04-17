@@ -1,27 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:icon_button/custom_widgets/button_widgets.dart';
 
-class Screenview extends StatefulWidget {
+class Screenview extends StatelessWidget {
   const Screenview({super.key});
-
-  @override
-  State<Screenview> createState() => _ScreenviewState();
-}
-
-class _ScreenviewState extends State<Screenview>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(vsync: this);
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +16,7 @@ class _ScreenviewState extends State<Screenview>
         backgroundColor: Colors.red,
       ),
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              onPressed: () {
-                print("icon button pressed");
-              },
-              icon: const Icon(Icons.favorite, size: 40),
-            ),
-          ],
-        ),
-      ),
+      body: CustomWidgets(),
     );
   }
 }
